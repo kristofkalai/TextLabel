@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "textlabel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stateman92/TextLabel",
+      "state" : {
+        "revision" : "24d68906b31e7f9d896f6df6cbb0edfa98d85b47",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

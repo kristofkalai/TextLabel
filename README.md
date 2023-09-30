@@ -14,7 +14,7 @@ Add the following to `Package.swift`:
 ## Usage
 
 ```swift
-let label = Label()
+let label = TextLabel()
 label.foregroundColor = .black
 label.backgroundColor = .clear
 label.text = .string("Test label")
@@ -22,3 +22,7 @@ label.text = .string("Test label")
 ```
 
 For details see the Example app.
+
+## Example
+
+<p style="text-align:center;"><img src="https://github.com/stateman92/TextLabel/blob/main/Resources/screenshot.png?raw=true" width="50%" alt="Example"></p>
