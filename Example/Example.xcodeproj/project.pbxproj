@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5821697A2B426313007C342D /* TextLayerWithAnimatableForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582169792B426313007C342D /* TextLayerWithAnimatableForegroundColor.swift */; };
 		58B5CC4E2AC8C9E2003EB057 /* TextLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 58B5CC4D2AC8C9E2003EB057 /* TextLabel */; };
 		58FCD27F2AC8C93900240865 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCD27E2AC8C93900240865 /* ExampleApp.swift */; };
 		58FCD2812AC8C93900240865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCD2802AC8C93900240865 /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		582169792B426313007C342D /* TextLayerWithAnimatableForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLayerWithAnimatableForegroundColor.swift; sourceTree = "<group>"; };
 		58FCD27B2AC8C93900240865 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FCD27E2AC8C93900240865 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		58FCD2802AC8C93900240865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				58FCD2802AC8C93900240865 /* ContentView.swift */,
 				58FCD2822AC8C93A00240865 /* Assets.xcassets */,
 				58FCD2842AC8C93A00240865 /* Preview Content */,
+				582169792B426313007C342D /* TextLayerWithAnimatableForegroundColor.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FCD2812AC8C93900240865 /* ContentView.swift in Sources */,
+				5821697A2B426313007C342D /* TextLayerWithAnimatableForegroundColor.swift in Sources */,
 				58FCD27F2AC8C93900240865 /* ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,7 +601,7 @@
 			repositoryURL = "https://github.com/stateman92/TextLabel";
 			requirement = {
 				kind = exactVersion;
-				version = 0.0.1;
+				version = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

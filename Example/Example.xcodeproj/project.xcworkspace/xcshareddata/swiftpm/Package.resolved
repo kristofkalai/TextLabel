@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stateman92/TextLabel",
       "state" : {
-        "revision" : "24d68906b31e7f9d896f6df6cbb0edfa98d85b47",
-        "version" : "0.0.1"
+        "revision" : "cdd9a7ca21b8ef673c56eac59b41f2c9623f4a76",
+        "version" : "0.0.2"
       }
     }
   ],

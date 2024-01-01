@@ -27,10 +27,15 @@ struct ContentView: View {
 
 struct TextLabelWrapper: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
-        let label = TextLabel()
+        let label = TextLabel<TextLayerWithAnimatableForegroundColor>()
         label.foregroundColor = .black
-        label.backgroundColor = .clear
+        label.backgroundColor = .white
         label.text = .string("Test label")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIView.animate(withDuration: 2) {
+                label.foregroundColor = .red
+            }
+        }
         return label
     }
 
