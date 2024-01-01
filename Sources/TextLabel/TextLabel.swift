@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class TextLabel: UIView {
+open class TextLabel<Layer: CATextLayer>: UIView {
     public enum Text {
         case string(String)
         case attributedString(NSAttributedString)
@@ -17,43 +17,45 @@ open class TextLabel: UIView {
     open var text: Text {
         get {
             if let attributedString = layer.string as? NSAttributedString {
-                return .attributedString(attributedString)
+                .attributedString(attributedString)
             } else if let string = layer.string as? String {
-                return .string(string)
+                .string(string)
+            } else {
+                .none
             }
-            return .none
         }
         set {
-            switch newValue {
-            case let .string(string): layer.string = string
-            case let .attributedString(attributedString): layer.string = attributedString
-            case .none: layer.string = nil
-            }
+            layer.string = {
+                switch newValue {
+                case let .string(string): string
+                case let .attributedString(attributedString): attributedString
+                case .none: nil
+                }
+            }()
         }
     }
 
     open var font: UIFont? {
         get {
-            let name: String
-            switch layer.font {
-            case let ctFont as CTFont:
-                guard let _name = CTFontCopyName(ctFont, kCTFontPostScriptNameKey) else {
-                    return nil
+            func cast(_ cfString: CFString?) -> String? {
+                if let cfString {
+                    cfString as NSString as String
+                } else {
+                    nil
                 }
-                name = _name as NSString as String
-            case let cgFont as CGFont:
-                guard let _name = cgFont.postScriptName else {
-                    return nil
-                }
-                name = _name as NSString as String
-            case let string as NSString:
-                name = string as String
-            case let string as String:
-                name = string
-            default:
-                return nil
             }
-            return UIFont(name: name, size: layer.fontSize)
+
+            let name: String? = {
+                switch layer.font {
+                case let ctFont as CTFont: cast(CTFontCopyName(ctFont, kCTFontPostScriptNameKey))
+                case let cgFont as CGFont: cast(cgFont.postScriptName)
+                case let string as NSString: string as String
+                case let string as String: string
+                default: nil
+                }
+            }()
+
+            return name.flatMap { UIFont(name: $0, size: layer.fontSize) }
         }
         set {
             layer.font = newValue
@@ -115,7 +117,7 @@ open class TextLabel: UIView {
     }
 
     public override class var layerClass: AnyClass {
-        CATextLayer.self
+        Layer.self
     }
 
     override public var layer: CATextLayer {
